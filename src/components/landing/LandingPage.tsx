@@ -14,11 +14,11 @@ export function LandingPage() {
       <Navbar />
       <main>
         <HeroSection />
-        <StatsSection />
+        {/* <StatsSection />
         <FeaturesSection />
         <HowItWorksSection />
         <PricingSection />
-        <CTASection />
+        <CTASection /> */}
       </main>
       <Footer />
     </>

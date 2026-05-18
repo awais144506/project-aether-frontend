@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 /**
- * Sticky top navigation with section anchors and OAuth Get Started CTA.
+ * Sticky top navigation with Vercel-inspired matte dark aesthetics.
  */
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,9 +21,9 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 ${
         scrolled
-          ? "border-b border-cyan-500/10 bg-slate-950/80 backdrop-blur-xl"
+          ? "border-b border-zinc-800 bg-black/70 backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -31,22 +31,24 @@ export function Navbar() {
         className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8"
         aria-label="Main"
       >
+        {/* Logo / Home Link */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-slate-100 transition hover:text-cyan-300"
+          className="flex items-center gap-2.5 text-zinc-100 transition hover:text-white"
         >
-          <Activity className="h-6 w-6 text-cyan-400" aria-hidden />
-          <span className="text-lg font-semibold tracking-tight">
+          <Activity className="h-5 w-5 text-white" aria-hidden />
+          <span className="font-medium tracking-tight text-sm">
             {SITE_NAME}
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        {/* Navigation Links */}
+        <ul className="hidden items-center gap-6 md:flex">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
               <a
                 href={href}
-                className="text-sm text-slate-400 transition hover:text-cyan-300"
+                className="text-sm text-zinc-400 transition hover:text-zinc-100"
               >
                 {label}
               </a>
@@ -54,7 +56,10 @@ export function Navbar() {
           ))}
         </ul>
 
-        <SignInButton variant="navbar" />
+        {/* Action Button */}
+        <div className="flex items-center">
+          <SignInButton variant="navbar" />
+        </div>
       </nav>
     </header>
   );

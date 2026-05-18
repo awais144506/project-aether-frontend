@@ -7,11 +7,15 @@ interface SignInButtonProps {
   variant?: "navbar" | "hero" | "cta";
 }
 
+// Replaced the playful rounded-full shapes and glowing neon cyans 
+// with Vercel's signature clean edges, crisp white backgrounds, and matte blacks.
 const variantStyles = {
   navbar:
-    "rounded-full bg-cyan-500/90 px-5 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-400 hover:shadow-cyan-400/30",
-  hero: "rounded-full bg-cyan-500 px-8 py-3.5 text-base font-semibold text-slate-950 shadow-xl shadow-cyan-500/30 transition hover:bg-cyan-400",
-  cta: "rounded-full bg-cyan-500 px-10 py-4 text-lg font-semibold text-slate-950 shadow-xl shadow-cyan-500/30 transition hover:bg-cyan-400",
+    "rounded-md bg-white px-4 py-1.5 text-sm font-medium text-black transition hover:bg-zinc-200 active:bg-zinc-300",
+  hero: 
+    "rounded-md bg-white px-6 py-2.5 text-base font-medium text-black transition hover:bg-zinc-200 active:bg-zinc-300",
+  cta: 
+    "rounded-md bg-white px-8 py-3.5 text-lg font-medium text-black transition hover:bg-zinc-200 active:bg-zinc-300",
 };
 
 /**
